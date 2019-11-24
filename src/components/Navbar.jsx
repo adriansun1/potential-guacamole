@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   NavigationLink,
   Button,
+  ButtonContainer,
   Wrapper,
   DrawerContainer,
 } from 'style/Navbar.style';
@@ -40,16 +41,11 @@ const Navbar = () => {
 
   return (
     <div>
-      <div>
-        {keys.map(key => {
-          return <Button key={uuid()} onClick={() => clickHandler(key)}>{key}</Button>;
-        })}
-      </div>
       <Wrapper>
-        {keys.map(key => {
+        {keys.map((key,index) => {
           return (
             <Drawer
-              key={uuid()}
+              key={index}
               option={options[key]}
               isOpen={isOpen}
               clickHandler={clickHandler}
@@ -58,6 +54,11 @@ const Navbar = () => {
           );
         })}
       </Wrapper>
+      <ButtonContainer>
+        {keys.map(key => {
+          return <Button key={uuid()} onClick={() => clickHandler(key)}>{key}</Button>;
+        })}
+      </ButtonContainer>
     </div>
   );
 };
