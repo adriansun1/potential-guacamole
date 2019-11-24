@@ -1,9 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { relative } from 'path';
 
-const Wrapper = styled.ul({
+export const Wrapper = styled.ul({
   display: 'flex',
   margin: 0,
   padding: 0,
@@ -13,13 +12,17 @@ const Wrapper = styled.ul({
   zIndex:5,
 });
 
-const Li = styled.li({
+export const Li = styled.li({
   display: '',
   margin: '10px',
   listStyleType: 'none',
 });
 
-const NavigationLink = props => {
+export const Button = styled.button({
+  zIndex:6,
+})
+
+export const NavigationLink = props => {
   const style = {
     textDecoration: 'none',
     color: 'black',
@@ -30,20 +33,13 @@ const NavigationLink = props => {
   return (<NavLink style={style} {...props} />);
 };
 
-const Drawer = styled.div(({isOpen})=>({
+export const DrawerContainer = styled.div(({shouldBeOpen})=>({
+  left: '0px',
   height: '100px',
-  transform: `translateY(${isOpen ? 0 : -200}px)`,
+  transform: `translateY(${shouldBeOpen? 0 : -200}px)`,
   width: '100%',
   backgroundColor:'pink',
   position:'absolute',
   transition:'all .2s ease-out',
   zIndex:4
 }))
-
-
-export {
-  Li,
-  Wrapper,
-  NavigationLink,
-  Drawer
-}
