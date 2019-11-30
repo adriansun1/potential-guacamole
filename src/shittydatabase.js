@@ -18,20 +18,16 @@ const FoodGridDB =  [
 ]
 
 const Options = {
-  option: {
-    subOption: {
-      title: 'japanese',
-    },
-    subOption2:{
-      title: 'title',
-      path: '/option2path/pathymcpathface'
-    }
+  Cuisines: {
+    Korean: {},
+    Japanese: {},
   },
-  option2:{
+  Other:{
     soption:{
       title:'poop',
+      path:'/poopypoop/poopypoopypoop'
     },
-  }
+  },
 };
 
 

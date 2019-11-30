@@ -54,4 +54,5 @@ export const DrawerContainer = styled.div(({shouldBeOpen})=>({
   position:'absolute',
   transition:'all .2s ease-out',
   zIndex:'2',
+  display:'flex',
 }))

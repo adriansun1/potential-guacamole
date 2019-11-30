@@ -17,7 +17,7 @@ const Drawer = ({ option, isOpen, optionName }) => {
       <DrawerContainer shouldBeOpen={shouldBeOpen}>
         {Object.keys(option).map(key => (
           <NavigationLink
-            to={option[key].path || `/${optionName}/${key}`}
+            to={option[key].path || `/${optionName.toLowerCase()}/${key.toLowerCase()}`}
             key={uuid()}
           >
             {option[key].title || key}
